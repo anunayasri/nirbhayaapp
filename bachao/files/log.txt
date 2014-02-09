@@ -1,0 +1,66 @@
+Calling emergency from 9475552163 ........
+Connected successfully
+
+update_location_query : UPDATE user_location 
+							SET latitude = '47.63', longitude = '-122.26', last_updated = CURRENT_TIMESTAMP()
+							WHERE phone = '9475552163'
+							 
+dist_query : SELECT con_email AS x_email
+				FROM user_contacts_email 
+				WHERE phone = 9475552163
+				UNION
+				SELECT email AS x_email
+				FROM user_profile AS up,
+					user_location AS ul
+				WHERE up.phone = ul.phone
+				AND ul.phone <> '9475552163'
+				AND	(6378.10 * ACOS(COS(RADIANS(47.63))
+					 * COS(RADIANS(ul.latitude))
+					 * COS(RADIANS(-122.26) - RADIANS(ul.longitude))
+					 + SIN(RADIANS(47.63))
+					 * SIN(RADIANS(ul.latitude)))) <= 1.500
+				 
+
+File successfully saved.
+
+Setting up email..... 
+
+v_sms_ph :  
+
+Adding address..... 
+NAME :  
+EMAIL :jishnu.unique@gmail.com 
+PHONE :
+--------------------------------
+v_sms_ph :  
+
+Adding address..... 
+NAME :  
+EMAIL :anunayasri@gmail.com 
+PHONE :
+--------------------------------
+v_sms_ph :  
+
+Adding address..... 
+NAME :  
+EMAIL :banerjee.soumyajyoti4@gmail.com 
+PHONE :
+--------------------------------
+v_sms_ph :  
+
+Adding address..... 
+NAME :  
+EMAIL :singh.rishi54@gmail.com 
+PHONE :
+--------------------------------
+v_sms_ph :  
+
+Adding address..... 
+NAME :  
+EMAIL :singh.rishi241091@gmail.com 
+PHONE :
+--------------------------------
+Success..... mail sent
+
+Success..... SMS sent
+
